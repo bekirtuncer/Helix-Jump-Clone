@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: becb23df756d64441b95053f73c7f31f, type: 3}
   m_Name: PlayerMovementSettings
   m_EditorClassIdentifier: 
-  jumpForce: 6
+  jumpForce: 8
