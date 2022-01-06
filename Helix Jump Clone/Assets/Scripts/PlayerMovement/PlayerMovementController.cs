@@ -12,6 +12,20 @@ namespace HelixJump.PlayerControls
         private void OnCollisionEnter(Collision collision)
         {
             _rb.velocity = new Vector3(_rb.velocity.x, _playerMovementSettings.jumpForce, _rb.velocity.z);
+            string materialName = collision.transform.GetComponent<MeshRenderer>().material.name;
+
+            if(materialName == "Safe (Instance)")
+            {
+
+            }
+            else if(materialName == "Unsafe (Instance)")
+            {
+                GameManager.gameOver = true;
+            }
+            else if ( materialName == "LastRing (Instance)")
+            {
+                GameManager.levelCompleted = true;
+            }
         }
     }
 }
