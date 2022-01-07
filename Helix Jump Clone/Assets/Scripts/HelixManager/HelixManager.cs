@@ -2,11 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace HelixJump.HelixManager
+namespace HelixJump
 {
     public class HelixManager : MonoBehaviour
     {
         [SerializeField] private HelixManagerData _helixManagerData;
+        [SerializeField] private GameManager _gameManager;
         
         public GameObject[] helixRings;
 
@@ -14,6 +15,7 @@ namespace HelixJump.HelixManager
 
         private void Start()
         {
+            _helixManagerData.numberOfRings = GameManager.currentLevelIndex + 5;
             //spawn helix rings
             for (int i = 0; i < _helixManagerData.numberOfRings; i++)
             {
